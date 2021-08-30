@@ -31,7 +31,7 @@
 	</head>
 	<body style="background-color: black;">
 		<?php 
-			include "nav.php";
+			include "nav.html";
 			include "data.php";
 			$sqlcode = "select* from AllAlbums where (Álbum = 'Planet Her')";
 			$find = $connect->query($sqlcode);

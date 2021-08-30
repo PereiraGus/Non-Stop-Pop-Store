@@ -1,3 +1,7 @@
+<?php
+	include "data.php";
+	$find = $connect->query("select * from allGenres");
+?>
 		<nav class="navbar navbar-inverse" style="margin: 0;">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -16,17 +20,17 @@
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#"><span class="glyphicon glyphicon-home"></span>&nbspMenu Principal<span class="sr-only">(current)</span></a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-certificate"></span>&nbspLançamentos</a></li>
+						<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>&nbspMenu Principal<span class="sr-only">(current)</span></a></li>
+						<li><a href="lanc.php"><span class="glyphicon glyphicon-certificate"></span>&nbspLançamentos</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list"></span>&nbspGêneros <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Pop</a></li>
-								<li><a href="#">Rock</a></li>
-								<li><a href="#">Rap</a></li>
-								<li><a href="#">Eurodance</a></li>
-								<li><a href="#">Vintage</a></li>
-								<li><a href="#">Disco</a></li>
+								<?php 
+								while($show = $find->fetch(PDO::FETCH_ASSOC))
+								{
+									$parameter = $show["Gênero"];
+									echo "<li><a href='search.php?search=",$parameter,"'>",($show["Gênero"]),"</a></li>";
+								}?>
 							</ul>
 						</li>
 					</ul>
