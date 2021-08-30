@@ -20,7 +20,7 @@
   </p>
   <p>Create entirely by the student Gustavo Pereira Castro.</p>
   
-  <h4>Read me in construction will be update upon the conclusion of the project</h4>
+  <h4>Read me in construction, will be update upon the conclusion of the project</h4>
 </section>
 
   
