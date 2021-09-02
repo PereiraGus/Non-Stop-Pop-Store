@@ -11,7 +11,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href="index.php">
 						<ul class="nav navbar-nav">
 							<li><img class="float-center" width="25px" height="25px" src="img/icon/black.png"></li>
 							<li>&nbspNon Stop Pop Store</li>
