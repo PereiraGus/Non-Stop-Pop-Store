@@ -50,7 +50,7 @@
 								<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>&nbspVer ou editar</a></li>
 								<li><a href="#"><span class="glyphicon glyphicon-cog"></span>&nbspConfigurações</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="#"><span class="glyphicon glyphicon-log-out"></span>&nbspSair</a></li>
+								<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>&nbspEntrar</a></li>
 							</ul>
 						</li>
 					</ul>
