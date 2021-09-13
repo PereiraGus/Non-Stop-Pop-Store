@@ -18,6 +18,7 @@
 	</head>
 	<body style="background-color: #181414;">
 		<?php 
+			session_start();
 			include "nav.php";
 			include "header.php";
 			include "data.php";
@@ -42,7 +43,7 @@
 			</div>
 		</div>
 		
-		<?php include "footer.php" ?>
+		<?php include "footer.html" ?>
 		
 	</body>
 </html>

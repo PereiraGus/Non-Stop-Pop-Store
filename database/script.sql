@@ -413,22 +413,25 @@ grant all privileges on dbmusic.* to "main"@"localhost" with grant option;
 create table tbuser(
 codUser int primary key auto_increment,
 nomeUser varchar(100) not null,
+iconUser varchar(500) default("https://cambodiaict.net/wp-content/uploads/2019/12/computer-icons-user-profile-google-account-photos-icon-account.jpg"),
 emailUser varchar(100) not null,
 senhaUser varchar(20) not null,
 adminUser boolean not null
 ) default charset  utf8;
 
 insert into tbuser values 
-(default, "NonStopPop", "non.stop@store.com", "fergieglamorous", 1),
-(default, "PearGus", "gustavo.oito@hotmail.com", "13062005", 0),
-(default, "Lahri", "larisonoda@gmail.com", "kda", 0);
+(default, "NonStopPop", "https://static.wikia.nocookie.net/gta/images/7/70/Non-stop-pop.png/revision/latest?cb=20150212115927&path-prefix=pt", "non.stop@store.com", "fergieglamorous", 1),
+(default, "PearGus", "https://i.pinimg.com/originals/38/2a/a8/382aa8bf7089677811ee654a17635db4.jpg", "gustavo.oito@hotmail.com", "13062005", 0),
+(default, "Lahri", "https://i.redd.it/ztufjdppq8r11.jpg", "larisonoda@gmail.com", "kda", 0),
+(default, "Lithitwo", "https://i.imgur.com/t5KJ4ti.png", "thaterin@hotmail.com", "paia", 0),
+(default, "LetKitKat", "https://i.redd.it/yodvogu2u8161.png", "let.resina@outlook.com", "rainhadbatalha", 0),
+(default, "XeeNi", "https://ddragon.leagueoflegends.com/cdn/11.18.1/img/spell/KalistaW.png", "tavel.taveora@gmail.com", "muhaha", 0);
 
-select * from tbuser;
+create view Usuários as
+select codUser, nomeUser as "Usuário", iconUser as "Foto", emailUser as "Email", senhaUser as "Senha", adminUser as "Nível de acesso"
+from tbuser;
 
-
-
-
-
+/* drop database dbmusic;
 
 
 
