@@ -50,6 +50,7 @@
 						else
 						{
 							$id = $_SESSION["ID"];
+							$isAdmin = $_SESSION["ADMIN"];
 							$find = $connect->query("select * from Usuários where codUser = $id");
 							$show = $find->fetch(PDO::FETCH_ASSOC);
 							$logStatus = "in";
@@ -60,12 +61,18 @@
 						<li class="nav-item dropdown">
 							<a class="dropdown-toggle" data-toggle="<?php echo $toggle ?>" role="button" aria-haspopup="true" aria-expanded="false" href="<?php if($logStatus == "out"){echo"login.php?status";}?>">
 							<?php if($logStatus == "in"){echo'<img class="d-inline-block align-center" width="22px" height="22px" style="border-radius: 10px;" src="'.$show["Foto"].'">';}
-							echo("&nbsp".$show["Usuário"]);if($logStatus == "in"){echo'<span class="caret"></span>';}
+							echo("&nbsp".$show["Usuário"]);if($logStatus == "in"){echo' <span class="caret"></span>';}
 							?>
 							</a>
 							<ul class="dropdown-menu">
 								<li><a href="#"><span class="glyphicon glyphicon-pencil"></span>&nbspVer ou editar</a></li>
 								<li><a href="#"><span class="glyphicon glyphicon-cog"></span>&nbspConfigurações</a></li>
+								<?php 
+									if($isAdmin == 1)
+									{
+										echo('<li><a href="#"><span class="glyphicon glyphicon-queen"></span>&nbspAdministrar</a></li>');
+									}
+								?>
 								<li role="separator" class="divider"></li>
 								<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbspSair</a></li>
 							</ul>

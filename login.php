@@ -17,22 +17,19 @@
 	<body>
 		<?php
 			include 'data.php';	
-			$status = $_GET["status"];
-			if($status == "error")
-			{
-				echo "<script>alert('Nome de usuário, email ou senha inválidos')</script>";
-			}
 		?>	
 		<div class="container-fluid">
-			<h2 align="center">
-				<a href="index.php" style="text-decoration: none; color: #333333;">
-					<img width="50px" height ="50px" class="d-inline-block align-top" src="img/icon/color.png">
-					<strong>Non Stop Pop</strong>
-				</a>
-			</h2>
-			<hr>
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-4">
+				
+					<h2 align="center">
+						<a href="index.php" style="text-decoration: none; color: #333333;">
+							<img width="50px" height ="50px" class="d-inline-block align-top" src="img/icon/color.png">
+							<strong>Non Stop Pop</strong>
+						</a>
+					</h2>
+					<hr>
+				
 					<form name="frmlogin" method="post" action="validation.php">
 						<div class="form-group">
 							<label for="txtemail">Endereço de e-mail ou nome de usuário</label>

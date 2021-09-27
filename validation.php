@@ -14,11 +14,19 @@
 	if($find->rowCount() == 1)
 	{
 		$show = $find->fetch(PDO::FETCH_ASSOC);
+		if($show["Nível de acesso"] == true)
+		{
+			$_SESSION["ADMIN"] = 1;
+		}
+		else
+		{
+			$_SESSION["ADMIN"] = 0;
+		}
 		$_SESSION["ID"] = $show["codUser"];
 		header("location:index.php");
 	}
 	else
 	{
-		header("location:login.php?status=error");
+		header("location:error.php");
 	}
 ?>
