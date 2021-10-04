@@ -25,21 +25,43 @@
 				</h2>
 				<hr>
 			
-				<h2><strong>Senha, usuário ou email inválidos.</strong></h2>
+				<h2><strong id="error"></strong></h2>
+				<script>
+					var code = window.location.search
+					var error = "Erro desconhecido, favor tentar novamente."
+					code = (code.replace("?",""))
+					switch(code)
+					{
+						case "email":
+						error = "Não foi possível encontrar um usuário ou email correspondente"
+						break
+						
+						case "passw":
+						error = "Senha incorreta. Verifique caracteres maiúsculos e minúsculos."
+						break
+						
+						case "duplicate":
+						error = "O email ou nome de usuário já foram cadastrados."
+						break
+					}
+					document.getElementById("error").innerHTML = error
+				</script><br>
 				<a href="login.php" style="text-decoration: none;">
-					<button type="submit" class="btn btn-block ng-binding" style="font-size: 14px; line-height: 1; border-radius: 500px; padding: 16px 48px 18px; transition-property: background-color,border-color,color,box-shadow,filter; transition-duration: .3s; border-width: 0; letter-spacing: 2px; min-width: 160px; text-transform: uppercase; white-space: normal; padding: 16px 14px 18px; background-color: #15883e; color: white">
-						TENTAR NOVAMENTE
+					<button id="try" type="submit" class="btn btn-block ng-binding" style="font-size: 14px; line-height: 1; border-radius: 500px; padding: 16px 48px 18px; transition-property: background-color,border-color,color,box-shadow,filter; transition-duration: .3s; border-width: 0; letter-spacing: 2px; min-width: 160px; text-transform: uppercase; white-space: normal; padding: 16px 14px 18px; background-color: #15883e; color: white">
+						TENTAR LOGAR NOVAMENTE
 					</button>
 				</a>
 				
 				<hr>
 				
 				<h2 align="center" style="font-weight: 900; margin-top: 12px; margin-bottom: 12px; font-size: 18px">Não tem uma conta?</h2>
-				<a href="#" style="text-decoration: none;">
+				<a href="signin.php" style="text-decoration: none;">
 					<button class="btn btn-block btn-default ng-binding" style="font-weight: 700; box-shadow: inset 0 0 0 2px #616467; letter-spacing: 2px; border-radius: 500px; padding: 16px 14px 18px;">
 						INSCREVER-SE NA NON STOP POP
 					</button>
 				</a>
 			</div>
 		</div>
-	</div>
+		</div>
+	</body>
+</html>

@@ -26,7 +26,7 @@
 					</h2>
 					<hr>
 				
-					<form name="frmlogin" method="post" action="validation.php">
+					<form name="frmcreate" method="post" action="insertUser.php">
 						<div class="form-group">
 							<label for="txtuser">Defina um nome de usuário</label>
 							<input name="txtuser" class="form-control" required id="txtuser">
@@ -47,9 +47,31 @@
 							<label for="txtpassw">Escolha uma senha</label>
 							<input name="txtpassw" type="password" class="form-control" required id="txtpassw">
 						</div>	
-						<button type="submit" class="btn btn-block ng-binding" style="font-size: 14px; line-height: 1; border-radius: 500px; padding: 16px 48px 18px; transition-property: background-color,border-color,color,box-shadow,filter; transition-duration: .3s; border-width: 0; letter-spacing: 2px; min-width: 160px; text-transform: uppercase; white-space: normal; padding: 16px 14px 18px; background-color: #15883e; color: white">
+						<div class="form-group">
+							<label for="txtpassw">Repita a senha</label>
+							<input name="txtrepeat" type="password" class="form-control" required id="txtrepeat">
+						</div>
+						<button id="btn" class="btn btn-block ng-binding" style="font-size: 14px; line-height: 1; border-radius: 500px; padding: 16px 48px 18px; transition-property: background-color,border-color,color,box-shadow,filter; transition-duration: .3s; border-width: 0; letter-spacing: 2px; min-width: 160px; text-transform: uppercase; white-space: normal; padding: 16px 14px 18px; background-color: #15883e; color: white">
 							<strong>CRIAR A CONTA</strong>
 						</button>
+						<script>
+							var btn = document.getElementById("btn")
+							var field1 = document.getElementByName("txtpassw")
+							var field2 = document.getElementByName("txtrepeat")
+							var frmCreate = document.getElementByName("frmcreate")
+							btn.addEventListener("click", checkPassw())
+							
+							function checkPassw()
+							{
+								if(field1.textContext =! field2.textContext)
+								{
+									
+								}
+								else
+								{
+									frmCreate.submit()
+								}
+							}
 					</form>
 				</div>
 			</div>

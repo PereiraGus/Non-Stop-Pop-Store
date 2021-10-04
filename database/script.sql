@@ -407,7 +407,7 @@ drop database dbmusic
 use dbmusic
 */
 
-create user "main"@"localhost" identified with mysql_native_password by "Negocios1.";
+//create user "main"@"localhost" identified with mysql_native_password by "Negocios1.";
 grant all privileges on dbmusic.* to "main"@"localhost" with grant option;
 
 create table tbuser(
@@ -422,18 +422,19 @@ adminUser boolean not null
 
 insert into tbuser values 
 (default, "NonStopPop", "https://static.wikia.nocookie.net/gta/images/7/70/Non-stop-pop.png/revision/latest?cb=20150212115927&path-prefix=pt",
-	"non.stop@store.com",  null, "fergieglamorous", 1),
+	"non.stop@store.com", "(83)82366-5271", "fergieglamorous", 1),
 (default, "PearGus", "https://i.pinimg.com/originals/38/2a/a8/382aa8bf7089677811ee654a17635db4.jpg", "gustavo.oito@hotmail.com",  null,
 	"13062005", 0),
-(default, "Lahri", "https://i.redd.it/ztufjdppq8r11.jpg", "larisonoda@gmail.com",  null, "kda", 0),
+(default, "Lahri", "https://i.redd.it/ztufjdppq8r11.jpg", "larisonoda@gmail.com", "(49)56693-0918", "kda", 0),
 (default, "Lithitwo", "https://i.imgur.com/t5KJ4ti.png", "thaterin@hotmail.com",  null, "paia", 0),
-(default, "LetKitKat", "https://i.redd.it/yodvogu2u8161.png", "let.resina@outlook.com", "rainhadbatalha", 0),
+(default, "LetKitKat", "https://i.redd.it/yodvogu2u8161.png", "let.resina@outlook.com", null, "rainhadbatalha", 0),
 (default, "XeeNi", "https://ddragon.leagueoflegends.com/cdn/11.18.1/img/spell/KalistaW.png", "tavel.taveora@gmail.com",  null, "muhaha", 0);
 
 create view Usuários as
-select codUser, nomeUser as "Usuário", iconUser as "Foto", emailUser as "Email", senhaUser as "Senha", adminUser as "Nível de acesso"
-from tbuser;
+select codUser, nomeUser as "Usuário", iconUser as "Foto", emailUser as "Email", telUser as "Telefone", senhaUser as "Senha", 
+adminUser as "Nível de acesso" from tbuser;
 
+select * from Usuários;
 /* drop database dbmusic;
 
 

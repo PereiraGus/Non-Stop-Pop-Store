@@ -27,6 +27,18 @@
 	}
 	else
 	{
-		header("location:error.php");
+		$find = $connect->query("select * from Usuários where (Email ='$userLogin' or Usuário = '$userLogin')");
+		if($find->rowCount() == 0)
+		{
+			header("location:error.php?email");
+		}
+		else
+		{
+			$find = $connect->query("select * from Usuários where Senha = '$userPassw'");
+			if($find->rowCount() == 0)
+			{
+				header("location:error.php?passw");
+			}
+		}
 	}
 ?>

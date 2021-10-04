@@ -46,10 +46,12 @@
 						<div class="row text-center mt-0">
 							<h2 align="center" style="font-weight: 900; margin-top: 12px; margin-bottom: 12px; font-size: 18px">Não tem uma conta?</h2>
 						</div>
-						<button type="submit" class="btn btn-block btn-default ng-binding" style="font-weight: 700; box-shadow: inset 0 0 0 2px #616467; letter-spacing: 2px; border-radius: 500px; padding: 16px 14px 18px;">
+					</form>
+					<a href="signin.php" style="text-decoration: none;">
+						<button class="btn btn-block btn-default ng-binding" style="font-weight: 700; box-shadow: inset 0 0 0 2px #616467; letter-spacing: 2px; border-radius: 500px; padding: 16px 14px 18px;">
 							INSCREVER-SE NA NON STOP POP
 						</button>
-					</form>
+					</a.
 				</div>
 			</div>
 		</div>
