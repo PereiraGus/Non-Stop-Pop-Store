@@ -38,6 +38,7 @@ create table tbMusica(
 codMsc int primary key auto_increment,
 nomeMsc varchar(50) not null,
 codAlb int not null,
+explMsc char(1) default ('N'),
 foreign key (codAlb) references tbAlbum (codAlb)
 )
 default charset utf8;
@@ -122,87 +123,87 @@ insert into tbAlbum values
 (default, "34+35 Remix", "https://i.scdn.co/image/ab67616d0000b27343d04ae192008a5113862faf", "Y", 2021, 2);
 
 insert into tbMusica values
-(default, "Woman", 1),
-(default, "Naked", 1),
-(default, "Payday", 1),
-(default, "Get Into It", 1),
-(default, "Need To Know", 1),
-(default, "I Don't Do Drugs", 1),
-(default, "Love To Dream", 1),
-(default, "You Right", 1),
-(default, "Been Like This", 1),
-(default, "Options", 1),
-(default, "Ain't Shit", 1),
-(default, "Imagine", 1),
-(default, "Alone", 1),
-(default, "Kiss Me More", 1),
-(default, "Up And Down", 1),
-(default, "Tonight", 1),
-(default, "Why Why", 1),
-(default, "Chromatica I", 2),
-(default, "Alice", 2),
-(default, "Stupid Love", 2),
-(default, "Rain On Me", 2),
-(default, "Free Woman", 2),
-(default, "Fun Tonight", 2),
-(default, "Chromatica II", 2),
-(default, "911", 2),
-(default, "Plastic Doll", 2),
-(default, "Sour Candy", 2),
-(default, "Enigma", 2),
-(default, "Replay", 2),
-(default, "Chromatica III", 2),
-(default, "Sine From Abone", 2),
-(default, "1000 Doves", 2),
-(default, "Babylon", 2),
-(default, "brutal", 3),
-(default, "traitor", 3),
-(default, "drivers license", 3),
-(default, "1 step forward, 3 steps back", 3),
-(default, "deja vu", 3),
-(default, "good 4 u", 3),
-(default, "enough for you", 3),
-(default, "happie", 3),
-(default, "jealousy, jealousy", 3),
-(default, "favorite crime", 3),
-(default, "hope ur ok", 3),
-(default, "the 1", 4),
-(default, "cardigan", 4),
-(default, "the last great american dinasty", 4),
-(default, "exile", 4),
-(default, "my tears ricochet", 4),
-(default, "mirrorball", 4),
-(default, "seven", 4),
-(default, "august", 4),
-(default, "this is me trying", 4),
-(default, "illicit affairs", 4),
-(default, "invisible string", 4),
-(default, "mad woman", 4),
-(default, "epiphany", 4),
-(default, "betty", 4),
-(default, "peace", 4),
-(default, "hoax", 4),
-(default, "Rehab", 5),
-(default, "You Know I'm No Good", 5),
-(default, "Me & Mr Jones", 5),
-(default, "Just Friends", 5),
-(default, "Back To Black", 5),
-(default, "Love Is A Losing Game", 5),
-(default, "Tears Dry On Their Own", 5),
-(default, "Wake Up Alone", 5),
-(default, "Some Unholy War", 5),
-(default, "He Can Only Hold Her", 5),
-(default, "Addicted", 5),
-(default, "Valerie", 5),
-(default, "I Get A Kick Out Of You", 6),
-(default, "Boss Bitch", 7),
-(default, "Baby, I'm Jealous", 8),
-(default, "Bottom Bitch", 9),
-(default, "WAP", 10),
-(default, "Savage Remix", 11),
-(default, "Wannabe 25", 12),
-(default, "Bang Bang", 13),
-(default, "34+35 Remix", 14);
+(default, "Woman", 1, "Y"),
+(default, "Naked", 1, "Y"),
+(default, "Payday", 1, "Y"),
+(default, "Get Into It", 1, "Y"),
+(default, "Need To Know", 1, "Y"),
+(default, "I Don't Do Drugs", 1, "Y"),
+(default, "Love To Dream", 1, "Y"),
+(default, "You Right", 1, "Y"),
+(default, "Been Like This", 1, "Y"),
+(default, "Options", 1, "Y"),
+(default, "Ain't Shit", 1, "Y"),
+(default, "Imagine", 1, "Y"),
+(default, "Alone", 1, "Y"),
+(default, "Kiss Me More", 1, "Y"),
+(default, "Up And Down", 1, "Y"),
+(default, "Tonight", 1, "Y"),
+(default, "Why Why", 1, "Y"),
+(default, "Chromatica I", 2, default),
+(default, "Alice", 2, default),
+(default, "Stupid Love", 2, default),
+(default, "Rain On Me", 2, default),
+(default, "Free Woman", 2, default),
+(default, "Fun Tonight", 2, default),
+(default, "Chromatica II", 2, default),
+(default, "911", 2, default),
+(default, "Plastic Doll", 2, default),
+(default, "Sour Candy", 2, default),
+(default, "Enigma", 2, default),
+(default, "Replay", 2, default),
+(default, "Chromatica III", 2, default),
+(default, "Sine From Abone", 2, default),
+(default, "1000 Doves", 2, default),
+(default, "Babylon", 2, default),
+(default, "brutal", 3, "Y"),
+(default, "traitor", 3, default),
+(default, "drivers license", 3, "Y"),
+(default, "1 step forward, 3 steps back", 3, "Y"),
+(default, "deja vu", 3, "Y"),
+(default, "good 4 u", 3, "Y"),
+(default, "enough for you", 3, default),
+(default, "happier", 3, "Y"),
+(default, "jealousy, jealousy", 3, default),
+(default, "favorite crime", 3, default),
+(default, "hope ur ok", 3, default),
+(default, "the 1", 4, "Y"),
+(default, "cardigan", 4, default),
+(default, "the last great american dinasty", 4, "Y"),
+(default, "exile", 4, default),
+(default, "my tears ricochet", 4, default),
+(default, "mirrorball", 4, default),
+(default, "seven", 4, default),
+(default, "august", 4, default),
+(default, "this is me trying", 4, default),
+(default, "illicit affairs", 4, default),
+(default, "invisible string", 4, default),
+(default, "mad woman", 4, "Y"),
+(default, "epiphany", 4, default),
+(default, "betty", 4, "Y"),
+(default, "peace", 4, "Y"),
+(default, "hoax", 4, default),
+(default, "Rehab", 5, default),
+(default, "You Know I'm No Good", 5, default),
+(default, "Me & Mr Jones", 5, "Y"),
+(default, "Just Friends", 5, "Y"),
+(default, "Back To Black", 5, "Y"),
+(default, "Love Is A Losing Game", 5, default),
+(default, "Tears Dry On Their Own", 5, "Y"),
+(default, "Wake Up Alone", 5, default),
+(default, "Some Unholy War", 5, default),
+(default, "He Can Only Hold Her", 5, default),
+(default, "Addicted", 5, default),
+(default, "Valerie", 5, default),
+(default, "I Get A Kick Out Of You", 6, default),
+(default, "Boss Bitch", 7, default),
+(default, "Baby, I'm Jealous", 8, default),
+(default, "Bottom Bitch", 9, "Y"),
+(default, "WAP", 10, "Y"),
+(default, "Savage Remix", 11, "Y"),
+(default, "Wannabe 25", 12, default),
+(default, "Bang Bang", 13, default),
+(default, "34+35 Remix", 14, "Y");
 
 
 insert into tbAlbumGenero values
@@ -336,8 +337,8 @@ insert into tbMusicaArtista values
 
 /*Informações sobre todas as músicas (artista principal apenas)*/
 create view allSongs as
-select m.codMsc as "Código da música", m.nomeMsc as "Música", art.nomeArt as "Artista principal", alb.nomeAlb as "Álbum", 
-tp.nomeTip as "Tipo do álbum", alb.capaAlb as "Capa"
+select m.codMsc as "Código", m.nomeMsc as "Música", art.nomeArt as "Artista", alb.codAlb as "CodAlb", alb.nomeAlb as "Álbum", 
+tp.nomeTip as "Tipo do álbum", alb.capaAlb as "Capa", m.explMsc as "Explícita"
 from ((((tbmusica as m 
 	inner join tbmusicaartista as ma on m.codMsc = ma.codMsc)
     inner join tbartista as art on art.codArt = ma.codArt)
@@ -347,7 +348,7 @@ from ((((tbmusica as m
     
 /*Informações dos álbuns e singles*/
 create view allAlbums as
-select alb.codAlb as "Código do álbum", alb.nomeAlb as "Álbum", sum(if (m.codAlb = alb.codAlb, 1, 1)) as "Número de músicas",
+select alb.codAlb as "Código", alb.nomeAlb as "Álbum", sum(if (m.codAlb = alb.codAlb, 1, 1)) as "Número de músicas",
 alb.capaAlb as "Capa", art.fotoArt as "Foto do artista", art.nomeArt as "Artista", gen.nomeGen as "Gênero", tp.nomeTip as "Tipo do álbum",
 alb.anoAlb as "Ano", alb.lancAlb
 from ((((((tbalbum as alb
@@ -377,12 +378,23 @@ from (((tbmusica as msc
     where (art.nomeArt = "Ariana Grande");
 
 /*Ver quantos artistas participaram numa música (ordenados por importância)*/
-create view allArtistsPerSong as
-select art.codArt as "Código do artista", art.nomeArt as "Nome do artista"
+delimiter $$
+create procedure allArtistsPerSong(vCodMsc int)
+begin
+
+select art.codArt as "CódigoArt", art.nomeArt as "Artista", m.codMsc as "CódigoMsc", m.nomeMsc as "NomeMsc"
 from ((tbartista as art
 	inner join tbmusicaartista as ma on art.codArt = ma.codArt)
     inner join tbmusica as m on ma.codMsc = m.codMsc)
-    where (m.nomeMsc = "34+35 Remix");
+    where (m.codMsc = vCodMsc);
+end;
+$$
+
+select count(*) from allArtistsPerSong;
+    
+call allArtistsPerSong(75);
+call allArtistsPerSong(80);
+
     
 create view allGenres as
 select gen.nomeGen as "Gênero"
@@ -397,8 +409,6 @@ select *from countSongsPerArtist;
 
 select * from allSongsPerArtist;
 
-select * from allArtistsPerSong;
-
 select * from allGenres;
     
 /*
@@ -407,7 +417,7 @@ drop database dbmusic
 use dbmusic
 */
 
-//create user "main"@"localhost" identified with mysql_native_password by "Negocios1.";
+/*create user "main"@"localhost" identified with mysql_native_password by "Negocios1.";*/
 grant all privileges on dbmusic.* to "main"@"localhost" with grant option;
 
 create table tbuser(

@@ -21,7 +21,7 @@
 			include "nav.php";
 			include "data.php";
 			$search = $_GET["search"];
-			$find = $connect->query("select Capa, Álbum, Artista from allAlbums where Gênero = '$search'");
+			$find = $connect->query("select Código, Capa, Álbum, Artista from allAlbums where Gênero = '$search'");
 			$resNum = $connect->query("select count(*) from AllAlbums where Gênero = '$search'")->fetchColumn(); 
 		?>
 		
@@ -51,7 +51,7 @@
 			
 				<?php while($show = $find->fetch(PDO::FETCH_ASSOC))
 				{ 
-					echo "<a href='#'>"?>
+					echo "<a href='album_page.php?alb=".$show["Código"]."'>"?>
 						<div class="col-sm-3" style="border-radius: 5px; background-color: #181818; margin: 10px; padding: 15px; width: 23%;">
 							<img style='border-radius: 3px;' height='80%' width='100%' src="<?php echo($show["Capa"]);?>">
 							<button type="button" class="btn btn-success" style="border-radius: 50px; padding-top: 10px; padding-bottom: 8px; position: absolute; margin-top: 72%; right: 8%;"><span class="glyphicon glyphicon-usd"></span></button>

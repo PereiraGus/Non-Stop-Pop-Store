@@ -9,6 +9,11 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="jquery.mask.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#txttel").mask("(00)00000-0000");
+			});
+		</script>
 	</head>
 	<body>
 		<?php
@@ -37,7 +42,7 @@
 						</div>
 						<div class="form-group">
 							<label for="txttel">Informe o seu telefone (Opcional)</label>
-							<input name="txttel" class="form-control" required id="txttel">
+							<input name="txttel" class="form-control" id="txttel">
 						</div>
 						<div class="form-group">
 							<label for="txtpic">Coloque uma foto de perfil (Opcional)</label>
@@ -51,36 +56,34 @@
 							<label for="txtpassw">Repita a senha</label>
 							<input name="txtrepeat" type="password" class="form-control" required id="txtrepeat">
 						</div>
-						<button id="btn" class="btn btn-block ng-binding" style="font-size: 14px; line-height: 1; border-radius: 500px; padding: 16px 48px 18px; transition-property: background-color,border-color,color,box-shadow,filter; transition-duration: .3s; border-width: 0; letter-spacing: 2px; min-width: 160px; text-transform: uppercase; white-space: normal; padding: 16px 14px 18px; background-color: #15883e; color: white">
+						<button id="btn" type="submit" class="btn btn-block ng-binding" style="font-size: 14px; line-height: 1; border-radius: 500px; padding: 16px 48px 18px; transition-property: background-color,border-color,color,box-shadow,filter; transition-duration: .3s; border-width: 0; letter-spacing: 2px; min-width: 160px; text-transform: uppercase; white-space: normal; padding: 16px 14px 18px; background-color: #15883e; color: white">
 							<strong>CRIAR A CONTA</strong>
 						</button>
-						<script>
+						<!--<script>
 							var btn = document.getElementById("btn")
-							var field1 = document.getElementByName("txtpassw")
-							var field2 = document.getElementByName("txtrepeat")
-							var frmCreate = document.getElementByName("frmcreate")
-							btn.addEventListener("click", checkPassw())
-							
+							var passw = document.getElementsByName("txtpassw")
+							var check = document.getElementsByName("txtrepeat")
+							var frmCreate = document.getElementsByName("frmcreate")
+							check.addEventListener("click", checkPassw)
+
 							function checkPassw()
 							{
-								if(field1.textContext =! field2.textContext)
+								if(passw.value =! check.value)
 								{
-									
+									check.style = "border: red;"
+									btn.disable = true;
 								}
 								else
 								{
-									frmCreate.submit()
+									check.style = "border: #ccc;"
+									btn.disable = false;
 								}
 							}
+						</script>-->
 					</form>
 				</div>
 			</div>
 		</div>
 	</body>
-	<script>
-			$(document).ready(function(){
-				$("#txttel").mask("(00)00000-0000");
-			});
-	</script>
 </html>
 	
