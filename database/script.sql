@@ -390,12 +390,18 @@ from ((tbartista as art
 end;
 $$
 
-select count(*) from allArtistsPerSong;
-    
-call allArtistsPerSong(75);
-call allArtistsPerSong(80);
+delimiter $$
+create procedure songShownWithAlbumCover(vNomeMsc varchar(150))
+begin
 
-    
+select msc.codMsc as "Código da música", msc.nomeMsc as "Música", alb.codAlb as "Código do Álbum", 
+alb.NomeAlb as "Álbum", alb.capaAlb as "Capa"
+from (tbmusica as msc
+	inner join tbalbum as alb on msc.codAlb = alb.codAlb)
+    where (nomeMsc like concat("%", vNomeMsc, "%"));
+end;
+$$
+
 create view allGenres as
 select gen.nomeGen as "Gênero"
 from tbgenero as gen
@@ -405,11 +411,16 @@ select * from allSongs;
 
 select * from allAlbums;
     
-select *from countSongsPerArtist;
+select * from countSongsPerArtist;
 
 select * from allSongsPerArtist;
 
 select * from allGenres;
+
+call allArtistsPerSong(75);
+call allArtistsPerSong(80);
+
+call songShownWithAlbumCover("34");
     
 /*
 drop database dbmusic
@@ -445,7 +456,10 @@ select codUser, nomeUser as "Usuário", iconUser as "Foto", emailUser as "Email"
 adminUser as "Nível de acesso" from tbuser;
 
 select * from Usuários;
+
 /* drop database dbmusic;
+
+
 
 
 

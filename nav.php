@@ -29,14 +29,14 @@
 								while($show = $find->fetch(PDO::FETCH_ASSOC))
 								{
 									$parameter = $show["Gênero"];
-									echo "<li><a href='search.php?search=",$parameter,"'>",($show["Gênero"]),"</a></li>";
+									echo "<li><a href='category.php?search=",$parameter,"'>",($show["Gênero"]),"</a></li>";
 								}?>
 							</ul>
 						</li>
 					</ul>
-					<form class="navbar-form navbar-left" role="search">
+					<form class="navbar-form navbar-left" role="search" method="get" action="search.php">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Músicas, álbuns e artistas...">
+							<input type="text" class="form-control" name="txtQuery" placeholder="Músicas, álbuns e artistas...">
 						</div>
 						<button type="submit" class="btn btn-default">Pesquisar <span class="glyphicon glyphicon-search"></span></button>
 					</form>
