@@ -1,6 +1,7 @@
 <?php
 	include "data.php";
 	$find = $connect->query("select * from allGenres");
+	session_start();
 ?>
 		<nav class="navbar navbar-inverse" style="margin: 0;">
 			<div class="container-fluid">
@@ -70,7 +71,7 @@
 								<?php 
 									if($isAdmin == 1)
 									{
-										echo('<li><a href="#"><span class="glyphicon glyphicon-queen"></span>&nbspAdministrar</a></li>');
+										echo('<li><a href="admin.php"><span class="glyphicon glyphicon-queen"></span>&nbspAdministrar</a></li>');
 									}
 								?>
 								<li role="separator" class="divider"></li>
