@@ -95,7 +95,7 @@
 		?>
 		<div class="albumHeader container">
 		<?php
-			echo "<img class='albCapa' src='".$show["Capa"]."'>";
+			echo "<img class='albCapa' src='img/covers/".$show["Capa"]."'>";
 			echo "<div class='details'>";
 				echo "<h5 class='albType'>".$show["Tipo do álbum"]."</h5>";
 				echo "<h1 class='albTit'>".$show["Álbum"]."</h1>";
