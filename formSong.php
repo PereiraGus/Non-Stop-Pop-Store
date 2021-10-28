@@ -19,14 +19,14 @@
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-4">
 					<h2 style="color: white;">Inclusão de música</h2>
-					<form method="post" style="color: white;" action="insertMsc.php">
+					<form method="post" style="color: white;">
 						<div class="form-group">
 							<label for="mscName">Título da música</label>
 							<input name="mscName" type="text" class="form-control" required id="mscName">
 						</div>
 						<div class="form-group">
 							<label for="mscArt">Artista</label><br>
-							<select name="mscArt" class="form-select" style="color: black; width: 100%; border-radius: 3px; padding: 8px;">
+							<select class="form-select" style="color: black; width: 100%; border-radius: 3px; padding: 8px;">
 								<?php
 									$find = $connect->query("select * from tbartista;");
 									while($show = $find->fetch(PDO::FETCH_ASSOC))
@@ -38,7 +38,7 @@
 						</div>
 						<div class="form-group">
 							<label for="mscAlb">Álbum</label><br>
-							<select name="mscAlb" style="color: black; width: 100%; border-radius: 3px; padding: 8px;">
+							<select style="color: black; width: 100%; border-radius: 3px; padding: 8px;">
 								<?php
 									$find = $connect->query("select Código, Álbum from allAlbums;");
 									while($show = $find->fetch(PDO::FETCH_ASSOC))
@@ -50,13 +50,13 @@
 						</div>
 						<div class="form-group">
 							<label for="mscExpl">É explícita?</label><br>
-							<select name="mscExpl" style="color: black; width: 100%; border-radius: 3px; padding: 8px;">
-								<option value="Y">Sim</option>
-								<option value="N">Não</option>
+							<select style="color: black; width: 100%; border-radius: 3px; padding: 8px;">
+								<option value="VIDEO">Sim</option>
+								<option value="VIDEO">Não</option>
 							</select>
 						</div>
 						<center>
-						<button type="submit" class="btn" style="color: black; background: white; font-size: 17px;">Cadastrar</button>
+						<button class="btn" style="color: black; background: white; font-size: 17px;">Cadastrar</button>
 						</center>
 					</form>
 				</div>

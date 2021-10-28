@@ -35,7 +35,7 @@
 				{ 
 					echo "<a href='album_page.php?alb=".$show["Código"]."'>"?>
 						<div class="col-sm-3" style="border-radius: 5px; background-color: #181818; margin: 10px; padding: 15px; width: 23%;">
-							<img style='border-radius: 3px;' height='80%' width='100%' src="img/covers/<?php echo($show["Capa"]);?>">
+							<img style='border-radius: 3px;' height='80%' width='100%' src="<?php echo($show["Capa"]);?>">
 							<button type="button" class="btn btn-success" style="border-radius: 50px; padding-top: 10px; padding-bottom: 8px; position: absolute; margin-top: 72%; right: 8%;"><span class="glyphicon glyphicon-usd"></span></button>
 							<h3 style='margin-top: 10px; margin-left: 5px; margin-bottom: 0px; color: white; font-weight: bold'><?php echo mb_strimwidth($show["Álbum"], 0, 21, "...");?></h3>
 							<h5 style='margin-top: 5px; margin-left: 5px; color: white; margin-bottom: 0px'><?php echo ($show["Artista"]);?></h5>

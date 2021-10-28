@@ -107,20 +107,20 @@ insert into tbGenero values
 (default, "Jazz");
 
 insert into tbAlbum values
-(default, "Planet Her", "planet_her.png", "Y", 2021, 1),
-(default, "Chromatica", "chromatica.png", "Y", 2020, 1),
-(default, "SOUR", "sour.png", "Y", 2021, 1),
-(default, "folklore", "folklore.png", "Y", 2020, 1),
-(default, "Back to Black", "back_to_black.png", "N", 2006, 1),
-(default, "I Get A Kick Out Of You", "i_get_a_kick.png", "Y", 2021, 2),
-(default, "Boss Bitch", "boss_bitch.png", "N", 2020, 2),
-(default, "Baby, I'm Jealous", "baby_im_jealous.png", "N", 2020, 2),
-(default, "Bottom Bitch", "bottom_bitch.png", "N", 2019, 2),
-(default, "WAP", "wap.png", "N", 2020, 2),
-(default, "Savage Remix", "savage_remix.png", "N", 2020, 2),
-(default, "Wannabe 25", "wannabe_25.png", "N", 2021, 3),
-(default, "Bang Bang", "bang_bang.png", "N", 2014, 2),
-(default, "34+35 Remix", "34+35_remix.png", "Y", 2021, 2);
+(default, "Planet Her", "https://upload.wikimedia.org/wikipedia/pt/thumb/1/16/Planet_Her_-_Doja_Cat.png/330px-Planet_Her_-_Doja_Cat.png", "Y", 2021, 1),
+(default, "Chromatica", "https://upload.wikimedia.org/wikipedia/pt/5/5d/Lady_Gaga_-_Chromatica.png", "Y", 2020, 1),
+(default, "SOUR", "https://upload.wikimedia.org/wikipedia/pt/7/71/Sour_-_Olivia_Rodrigo.png", "Y", 2021, 1),
+(default, "folklore", "https://upload.wikimedia.org/wikipedia/pt/f/f8/Taylor_Swift_-_Folklore.png", "Y", 2020, 1),
+(default, "Back to Black", "https://upload.wikimedia.org/wikipedia/pt/a/ac/Back_to_Black_%C3%A1lbum.jpg", "N", 2006, 1),
+(default, "I Get A Kick Out Of You", "https://images.genius.com/15f89bf3e3b21c3956c60ad4e98121b8.1000x1000x1.jpg", "Y", 2021, 2),
+(default, "Boss Bitch", "https://lastfm.freetls.fastly.net/i/u/770x0/4108ebf77eabb6264d19c03f5fd98d31.jpg", "N", 2020, 2),
+(default, "Baby, I'm Jealous", "https://upload.wikimedia.org/wikipedia/pt/thumb/0/02/Bebe_Rexha_feat_Doja_Cat_-_Baby%2C_I%27m_Jealous.png/220px-Bebe_Rexha_feat_Doja_Cat_-_Baby%2C_I%27m_Jealous.png", "N", 2020, 2),
+(default, "Bottom Bitch", "https://img.discogs.com/XutbJWKt_STMrsl94S1t7q998GE=/fit-in/600x600/filters:strip_icc():format(webp):mode_rgb():quality(90)/discogs-images/R-14242215-1570561555-5595.jpeg.jpg", "N", 2019, 2),
+(default, "WAP", "https://upload.wikimedia.org/wikipedia/pt/e/e3/Cardi_B_part_Megan_Thee_Stallion_-_Wap.png", "N", 2020, 2),
+(default, "Savage Remix", "https://lastfm.freetls.fastly.net/i/u/770x0/d545ef6e23e0dbbbed4e921bd6dab558.jpg#d545ef6e23e0dbbbed4e921bd6dab558", "N", 2020, 2),
+(default, "Wannabe 25", "https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2021/07/10/1788227411-spice-girls-2-umg-virgin-1.jpg", "N", 2021, 3),
+(default, "Bang Bang", "https://upload.wikimedia.org/wikipedia/pt/0/0b/Capa_de_Bang_Bang.jpg", "N", 2014, 2),
+(default, "34+35 Remix", "https://i.scdn.co/image/ab67616d0000b27343d04ae192008a5113862faf", "Y", 2021, 2);
 
 insert into tbMusica values
 (default, "Woman", 1, "Y"),
@@ -137,10 +137,8 @@ insert into tbMusica values
 (default, "Imagine", 1, "Y"),
 (default, "Alone", 1, "Y"),
 (default, "Kiss Me More", 1, "Y"),
-(default, "You Right - Extended", 1, "Y"),
 (default, "Up And Down", 1, "Y"),
 (default, "Tonight", 1, "Y"),
-(default, "Ride", 1, "Y"),
 (default, "Why Why", 1, "Y"),
 (default, "Chromatica I", 2, default),
 (default, "Alice", 2, default),

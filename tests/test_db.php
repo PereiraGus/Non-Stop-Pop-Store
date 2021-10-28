@@ -18,7 +18,7 @@
 			$find = $connect->query("select * from tbalbum");
 			while($show = $find->fetch(PDO::FETCH_ASSOC)){
 				
-			echo "<img class='img-thumbnail' height='200px' width='200px' src='img/covers/".$show["capaAlb"]."'><br>";
+			echo "<img class='img-thumbnail' height='200px' width='200px' src='".$show["capaAlb"]."'><br>";
 			echo $show["nomeAlb"]."<br>";
 			echo "<hr>";
 			
