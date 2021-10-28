@@ -138,10 +138,7 @@ insert into tbMusica values
 (default, "Alone", 1, "Y"),
 (default, "Kiss Me More", 1, "Y"),
 (default, "You Right - Extended", 1, "Y"),
-(default, "Up And Down", 1, "Y"),
-(default, "Tonight", 1, "Y"),
-(default, "Ride", 1, "Y"),
-(default, "Why Why", 1, "Y"),
+(default, "Up and Down", 1, "Y"),
 (default, "Chromatica I", 2, default),
 (default, "Alice", 2, default),
 (default, "Stupid Love", 2, default),
@@ -205,7 +202,10 @@ insert into tbMusica values
 (default, "Savage Remix", 11, "Y"),
 (default, "Wannabe 25", 12, default),
 (default, "Bang Bang", 13, default),
-(default, "34+35 Remix", 14, "Y");
+(default, "34+35 Remix", 14, "Y"),
+(default, "Tonight", 1, "Y"),
+(default, "Ride", 1, "Y"),
+(default, "Why Why", 1, "Y");
 
 
 insert into tbAlbumGenero values
@@ -259,8 +259,7 @@ insert into tbMusicaArtista values
 (15, 3),
 (16, 3),
 (16, 13),
-(17, 3),
-(17, 14),
+(17, 1),
 (18, 1),
 (19, 1),
 (20, 1),
@@ -279,7 +278,7 @@ insert into tbMusicaArtista values
 (31, 1),
 (31, 5),
 (32, 1),
-(33, 1),
+(33, 8),
 (34, 8),
 (35, 8),
 (36, 8),
@@ -290,7 +289,7 @@ insert into tbMusicaArtista values
 (41, 8),
 (42, 8),
 (43, 8),
-(44, 8),
+(44, 9),
 (45, 9),
 (46, 9),
 (47, 9),
@@ -307,7 +306,7 @@ insert into tbMusicaArtista values
 (57, 9),
 (58, 9),
 (59, 9),
-(60, 9),
+(60, 21),
 (61, 21),
 (62, 21),
 (63, 21),
@@ -319,23 +318,26 @@ insert into tbMusicaArtista values
 (69, 21),
 (70, 21),
 (71, 21),
-(72, 21),
-(73, 1),
-(73, 15),
+(72, 1),
+(72, 15),
+(73, 3),
+(74, 16),
 (74, 3),
-(75, 16),
 (75, 3),
-(76, 3),
-(77, 7),
+(76, 7),
+(76, 6),
 (77, 6),
-(78, 6),
-(79, 22),
-(80, 18),
+(78, 22),
+(79, 18),
+(79, 2),
+(79, 17),
 (80, 2),
-(80, 17),
-(81, 2),
+(80, 3),
+(80, 6),
 (81, 3),
-(81, 6);
+(82, 3),
+(83, 3),
+(83, 14);
 
 /*Informações sobre todas as músicas (artista principal apenas)*/
 create view allSongs as
@@ -404,6 +406,7 @@ from (tbmusica as msc
 end;
 $$
 
+
 create view allGenres as
 select gen.nomeGen as "Gênero"
 from tbgenero as gen
@@ -417,7 +420,7 @@ select * from countSongsPerArtist;
 
 select * from allSongsPerArtist;
 
-select * from allGenres;
+/*select * from allGenres;*/
 
 call allArtistsPerSong(75);
 call allArtistsPerSong(80);
