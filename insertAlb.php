@@ -1,6 +1,7 @@
 <?php
 
 include 'data.php';
+include 'resize-class.php';
 
 $name = $_POST['albName'];
 $tipo = $_POST['albTip'];
@@ -9,20 +10,13 @@ $estilo = $_POST['albEst'];
 $ano = $_POST['albAno'];
 $lanc = $_POST['albLanc'];
 
-$img = $_FILES['albCapa'];
+$imgReciever = $_FILES['albCapa'];
 
-$destino = "img/covers";
+$path = "img/covers/";
 
+preg_match("/\.(jpg|jpeg|png|gif){1}$/i",$imgReciever['name'],$extension);
 
-//gerando nome aleatorio para imagem
-// preg_match vai pegar imagens nas extensões jpg|jpeg|png|gif
-// do nome que esta na variavel $recebe_foto1 do parametro name e a $extensão vai receber o formato
-preg_match("/\.(jpg|jpeg|png|gif){1}$/i",$img['name'],$extension);
-
-// a função md5 vai gerar um valor randomico  com base no horario "time"
-// incrementar o ponto e a extensão
-// função md5 é criado para gerar criptografia
-$img = md5(uniqid(time())).".".$extension[1];
+$imgName = md5(uniqid(time())).".".$extension[1];
 
 
 echo $name."<br>";
@@ -35,7 +29,13 @@ echo $lanc."<br>";
 $error = "";
 
 try {
-	$insert=$connect->query("insert into tbalbum values (default, '$name', '$img', '$lanc', '$ano', '$tipo')");	
+	$insert=$connect->query("insert into tbalbum values (default, '$name', '$imgName', '$lanc', '$ano', '$tipo')");
+	$insert=$connect->query("insert into tbalbumgenero values ((select codAlb from tbalbum where (nomeAlb = '$name')), '$estilo')");
+
+	move_uploaded_file($imgReciever['tmp_name'], $path.$imgName);             
+	$resizeObj = new resize($path.$imgName);
+	$resizeObj -> resizeImage(300, 300, 'crop');
+	$resizeObj -> saveImage($path.$imgName, 100);
 }
 catch(PDOException $error) {
 	$error->getMessage();
@@ -46,7 +46,7 @@ $success = true;
 
 if($success)
 {
-	$anounce = "Álbum ".$name." cadastrada com sucesso.";
+	$anounce = "Álbum ".$name." cadastrado com sucesso.";
 }
 else
 {
@@ -69,4 +69,7 @@ else
 			</a>
 		</h1>
 	</div>
+	<h3 align="center" style="color:white">
+		Atenção: O álbum não aparecerá no site a menos que você cadastre uma música nele!
+	</h3>
 </body>

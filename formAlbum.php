@@ -37,18 +37,6 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="albArt">Artista</label><br>
-							<select name="albArt" class="form-select" style="color: black; width: 100%; border-radius: 3px; padding: 8px;">
-								<?php
-									$find = $connect->query("select * from tbartista;");
-									while($show = $find->fetch(PDO::FETCH_ASSOC))
-									{
-										echo "<option value='".$show["codArt"]."'>".$show["nomeArt"]."</option>";
-									}
-								?>
-							</select>
-						</div>
-						<div class="form-group">
 							<label for="albCapa">Foto de capa</label><br>
 							<input name="albCapa" style="width:100%" type="file" accept="img/covers/*" required id="albCapa">
 						</div>

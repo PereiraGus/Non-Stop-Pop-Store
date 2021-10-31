@@ -29,7 +29,9 @@
 					<a href="formSong.php" style="color: black;">
 						<button class="btn" style="font-size: 30px; margin-bottom: 15px;">Adicionar música</button>
 					</a>
-					<button class="btn" style="font-size: 30px; margin-bottom: 15px;">Adicionar artista</button>
+					<a href="formArtist.php" style="color: black;">
+						<button class="btn" style="font-size: 30px; margin-bottom: 15px;">Adicionar artista</button>
+					</a>
 					<a href="formAlbum.php" style="color: black;">
 						<button class="btn" style="font-size: 30px; margin-bottom: 15px;">Adicionar álbum</button>
 					</a>

@@ -100,7 +100,7 @@
 				echo "<h5 class='albType'>".$show["Tipo do álbum"]."</h5>";
 				echo "<h1 class='albTit'>".$show["Álbum"]."</h1>";
 				echo "<div class='info'>";
-					echo "<img class='artFoto' src='".$show["Foto do artista"]."'>";
+					echo "<img class='artFoto' src='img/artists/".$show["Foto do artista"]."'>";
 					echo "<h5>".$show["Artista"]." • </h5>";
 					echo "<h5>".$show["Ano"]." • </h5>";
 					echo "<h5>".$show["Número de músicas"]." músicas</h5>";
@@ -163,7 +163,7 @@
 						
 				  echo '</div></td>';
 				  echo '<td><audio controls preload="auto">
-					<source src="msc/'.$show['CodAlb'].'/'.$i.'.mp3" type="audio/mpeg">
+					<source src="msc/'.$codMsc.'.mp3" type="audio/mpeg">
 					</audio></td>';
 				  echo '<td></td>';
 				  echo '<td class="align-middle">1:00</td>';

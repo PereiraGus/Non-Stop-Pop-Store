@@ -352,7 +352,7 @@ from ((((tbmusica as m
     
 /*Informações dos álbuns e singles*/
 create view allAlbums as
-select alb.codAlb as "Código", alb.nomeAlb as "Álbum", sum(if (m.codAlb = alb.codAlb, 1, 1)) as "Número de músicas",
+select alb.codAlb as "Código", alb.nomeAlb as "Álbum", 0 as "Número de músicas",
 alb.capaAlb as "Capa", art.fotoArt as "Foto do artista", art.nomeArt as "Artista", gen.nomeGen as "Gênero", tp.nomeTip as "Tipo do álbum",
 alb.anoAlb as "Ano", alb.lancAlb
 from ((((((tbalbum as alb
@@ -362,7 +362,8 @@ from ((((((tbalbum as alb
     inner join tbtipo as tp on alb.codTip = tp.codTip)
     inner join tbalbumgenero as ag on alb.codAlb = ag.codAlb)
     inner join tbgenero as gen on ag.codGen = gen.codGen)
-    group by m.codAlb;
+    group by alb.codAlb
+    order by alb.codAlb;
     
 /*Achar número de músicas de um artista através do nome*/
 create view countSongsPerArtist as
@@ -462,12 +463,6 @@ adminUser as "Nível de acesso" from tbuser;
 
 select * from Usuários;
 
-/* drop database dbmusic;
-
-
-
-
-
-
-
-
+/*drop database dbmusic;
+SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 1;

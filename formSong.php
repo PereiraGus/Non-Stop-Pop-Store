@@ -19,7 +19,7 @@
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-4">
 					<h2 style="color: white;">Inclusão de música</h2>
-					<form method="post" style="color: white;" action="insertMsc.php">
+					<form method="post" style="color: white;" action="insertMsc.php" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="mscName">Título da música</label>
 							<input name="mscName" type="text" class="form-control" required id="mscName">
@@ -37,13 +37,17 @@
 							</select>
 						</div>
 						<div class="form-group">
+							<label for="mscArchive">Arquivo da música</label><br>
+							<input name="mscArchive" style="width:100%" type="file" required id="mscArchive">
+						</div>
+						<div class="form-group">
 							<label for="mscAlb">Álbum</label><br>
 							<select name="mscAlb" style="color: black; width: 100%; border-radius: 3px; padding: 8px;">
 								<?php
-									$find = $connect->query("select Código, Álbum from allAlbums;");
+									$find = $connect->query("select codAlb, nomeAlb from tbalbum;");
 									while($show = $find->fetch(PDO::FETCH_ASSOC))
 									{
-										echo "<option value='".$show["Código"]."'>".$show["Álbum"]."</option>";
+										echo "<option value='".$show["codAlb"]."'>".$show["nomeAlb"]."</option>";
 									}
 								?>
 							</select>

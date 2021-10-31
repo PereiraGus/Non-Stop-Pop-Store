@@ -7,15 +7,27 @@ $art = $_POST['mscArt'];
 $codAlb = $_POST['mscAlb'];
 $expl = $_POST['mscExpl'];
 
+$archive = $_FILES['mscArchive'];
+$path = "msc/";
+
 echo $name."<br>";
 echo $art."<br>";
 echo $codAlb."<br>";
 echo $expl."<br>";
+echo $path;
+
+$find=$connect->query("select codMsc from tbmusica where (nomeMsc = '$name')");
+	while($show = $find->fetch(PDO::FETCH_ASSOC))
+	{
+		$archName = $show["codMsc"].".mp3";
+		echo $archName;
+	}
 
 $error = "";
 
 try {
-	$insert=$connect->query("insert into tbmusica values (default, '$name', '$codAlb','$expl')");	
+	$insert=$connect->query("insert into tbmusica values (default, '$name', '$codAlb','$expl')");
+	move_uploaded_file($archive['tmp_name'], $path.$archName);  
 }
 catch(PDOException $e) {
 	$error->getMessage();
@@ -26,7 +38,6 @@ try {
 	$insert=$connect->query("insert into tbmusicaartista values ((select codMsc from tbmusica where nomeMsc = '$name'), '$art')");	
 }
 catch(PDOException $e) {
-	$error->getMessage();
 	$success = false;
 }
 
