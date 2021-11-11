@@ -26,39 +26,21 @@ echo $estilo."<br>";
 echo $ano."<br>";
 echo $lanc."<br>";
 
-$error = "";
+$insert=$connect->query("insert into tbalbum values (default, '$name', '$imgName', '$lanc', '$ano', '$tipo')");
+$insert=$connect->query("insert into tbalbumgenero values ((select codAlb from tbalbum where (nomeAlb = '$name')), '$estilo')");
 
-try {
-	$insert=$connect->query("insert into tbalbum values (default, '$name', '$imgName', '$lanc', '$ano', '$tipo')");
-	$insert=$connect->query("insert into tbalbumgenero values ((select codAlb from tbalbum where (nomeAlb = '$name')), '$estilo')");
+move_uploaded_file($imgReciever['tmp_name'], $path.$imgName);             
+$resizeObj = new resize($path.$imgName);
+$resizeObj -> resizeImage(300, 300, 'crop');
+$resizeObj -> saveImage($path.$imgName, 100);
 
-	move_uploaded_file($imgReciever['tmp_name'], $path.$imgName);             
-	$resizeObj = new resize($path.$imgName);
-	$resizeObj -> resizeImage(300, 300, 'crop');
-	$resizeObj -> saveImage($path.$imgName, 100);
-}
-catch(PDOException $error) {
-	$error->getMessage();
-	$success = false;
-}
-
-$success = true;
-
-if($success)
-{
-	$anounce = "Álbum ".$name." cadastrado com sucesso.";
-}
-else
-{
-	$anounce = "Não foi possível cadastrar o álbum selecionado. Erro: ".$error;
-}
 ?>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <body style="background-color: #333333">
-	<h1 align="center" style="color:white"><?php echo $anounce; ?></h1>
+	<h1 align="center" style="color:white">Inserção realizada com sucesso</h1>
 	<div style="display:flex;justify-content: space-evenly;">
 		<h1>
 			<a href="formAlbum.php">

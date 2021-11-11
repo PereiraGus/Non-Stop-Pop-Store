@@ -35,7 +35,9 @@
 					<a href="formAlbum.php" style="color: black;">
 						<button class="btn" style="font-size: 30px; margin-bottom: 15px;">Adicionar álbum</button>
 					</a>
-					<button class="btn" style="font-size: 30px; margin-bottom: 15px;">Adicionar estilo</button>
+					<a href="menuAlterAlbum.php">
+						<button class="btn" style="font-size: 30px; margin-bottom: 15px;">Alterar álbum</button>
+					</a>
 					<a href="index.php" style="color: black;">
 						<button class="btn" style="font-size: 30px; margin-bottom: 15px;">Voltar ao site</button>
 					</a>
