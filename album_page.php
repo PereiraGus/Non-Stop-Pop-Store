@@ -104,6 +104,7 @@
 					echo "<h5>".$show["Artista"]." • </h5>";
 					echo "<h5>".$show["Ano"]." • </h5>";
 					echo "<h5>".$show["Número de músicas"]." músicas</h5>";
+					echo "<h5> • <a style='color:gray' href='cart.php?cod=".$show["Código"]."'>Comprar</a></h5>";
 				echo "</div>";
 			echo "</div>";
 		?>
