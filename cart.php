@@ -23,13 +23,13 @@
 			
 			echo "<h1>";
 			
-			$codProd = $_GET["cod"];
-			
 			if(empty($_GET["cod"]))
 			{}
 			
 			else
 			{
+				$codProd = $_GET["cod"];
+				
 				if(!isset($_SESSION["cart"]))
 				{
 					$_SESSION["cart"] = array();
@@ -43,12 +43,11 @@
 				{
 					$_SESSION["cart"][$codProd]+=1;
 				}
-				$total = 0;
-				foreach ($_SESSION['cart'] as $codAlb => $qnt) 
-				{
-					
-					$total += (1.99 * $qnt);
-				}
+			}
+			$total = 0;	
+			foreach ($_SESSION['cart'] as $codAlb => $qnt) 
+			{
+				$total += (1.99 * $qnt);
 			}
 		?>
 		</h1>

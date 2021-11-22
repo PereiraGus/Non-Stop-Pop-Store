@@ -37,7 +37,7 @@
 					<h3 style="color:white;margin:0px;"><?php echo $qnt; ?> </h3>
 				</th>
 				<th>			
-					<a href="removeCarrinho.php?cd=<?php echo $cd;?>">	
+					<a href="removeCart.php?cod=<?php echo $show["codAlb"];?>">	
 						<button class="btn btn-lg btn-block btn-danger" style="height:100%;">
 							<span class="glyphicon glyphicon-remove"></span>
 						</button>
